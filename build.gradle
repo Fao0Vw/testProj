@@ -18,3 +18,19 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.example.Main'  // ✅ путь к твоему классу с main()
+        )
+    }
+
+    // ✅ Включаем все зависимости в fat-JAR
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    // ✅ Избегаем дубликатов
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
