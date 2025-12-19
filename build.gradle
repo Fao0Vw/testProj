@@ -22,7 +22,7 @@ test {
 jar {
     manifest {
         attributes(
-                'Main-Class': 'org.example.Main'  // ✅ путь к твоему классу с main()
+                'Main-Class': 'org.example.Main'
         )
     }
 
