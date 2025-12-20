@@ -1,5 +1,5 @@
 # 1. Базовый образ с JRE (рекомендуется использовать slim-версии для меньшего размера)
-FROM openjdk:17-jre-slim
+FROM eclipse-temurin:17-jre-alpine
 
 # 2. Установка рабочего каталога внутри контейнера
 WORKDIR /app
