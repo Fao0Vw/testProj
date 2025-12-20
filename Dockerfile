@@ -6,7 +6,7 @@ WORKDIR /app
 
 # 3. Копирование вашего JAR-файла в контейнер
 # Замените 'your-application.jar' на имя вашего файла
-COPY target/your-application.jar app.jar
+COPY build/libs/*.jar app.jar
 
 # 4. Команда для запуска приложения
 ENTRYPOINT ["java", "-jar", "app.jar"]
